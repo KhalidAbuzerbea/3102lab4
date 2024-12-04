@@ -1,0 +1,25 @@
+<div class="container">
+  <h1>Submitted User Data</h1>
+
+  <table class="table table-bordered">
+    <thead>
+    <tr>
+      <th>First Name</th>
+      <th>Last Name</th>
+      <th>Phone Number</th>
+      <th>Email</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>{{ userData.firstName }}</td>
+      <td>{{ userData.lastName }}</td>
+      <td>{{ userData.phoneNumber }}</td>
+      <td>{{ userData.email }}</td>
+    </tr>
+    </tbody>
+  </table>
+
+  <a routerLink="/user-form" class="btn btn-primary mt-3">Go Back to Form</a>
+</div>
+

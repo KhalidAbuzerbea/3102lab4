@@ -1,0 +1,43 @@
+<form [formGroup]="userForm" (ngSubmit)="onSubmit()"> <!-- Here is the ngSubmit event -->
+
+  <!-- First Name Field -->
+  <div class="mb-3">
+    <label for="firstName">First Name:</label>
+    <input id="firstName" type="text" formControlName="firstName" class="form-control" required />
+    <div *ngIf="userForm.controls['firstName'].invalid && userForm.controls['firstName'].touched">
+      <small class="text-danger">First Name is required.</small>
+    </div>
+  </div>
+
+  <!-- Last Name Field -->
+  <div class="mb-3">
+    <label for="lastName">Last Name:</label>
+    <input id="lastName" type="text" formControlName="lastName" class="form-control" required />
+    <div *ngIf="userForm.controls['lastName'].invalid && userForm.controls['lastName'].touched">
+      <small class="text-danger">Last Name is required.</small>
+    </div>
+  </div>
+
+  <!-- Phone Number Field -->
+  <div class="mb-3">
+    <label for="phoneNumber">Phone Number:</label>
+    <input id="phoneNumber" type="text" formControlName="phoneNumber" class="form-control" placeholder="Enter a 10-digit phone number" />
+    <div *ngIf="userForm.controls['phoneNumber'].invalid && userForm.controls['phoneNumber'].touched">
+      <small class="text-danger">
+        Phone number must be 10 digits long, with the first and fourth digits not being zero.
+      </small>
+    </div>
+  </div>
+
+  <!-- Email Field -->
+  <div class="mb-3">
+    <label for="email">Email:</label>
+    <input id="email" type="email" formControlName="email" class="form-control" placeholder="Enter a valid email address" required />
+    <div *ngIf="userForm.controls['email'].invalid && userForm.controls['email'].touched">
+      <small class="text-danger">Please enter a valid email address.</small>
+    </div>
+  </div>
+
+  <!-- Submit Button -->
+  <button type="submit" class="btn btn-primary" [disabled]="userForm.invalid">Submit</button>
+</form>
